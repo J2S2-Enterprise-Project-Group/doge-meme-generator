@@ -152,3 +152,11 @@ The following command *should* remove all resources:
 ```
 $ serverless remove
 ```
+
+# References:
+* https://developer.happyr.com/aws-lambda-image-optimization-with-serverless
+* https://github.com/serverlesspub/imagemagick-aws-lambda-2/issues/22
+* https://github.com/serverlesspub/imagemagick-aws-lambda-2/issues/6
+* https://github.com/serverlesspub/imagemagick-aws-lambda-2/pull/28
+* https://github.com/BlueprintKansas/NVRIS/pull/7/files
+* https://github.com/BlueprintKansas/ksvotes.org/issues/449

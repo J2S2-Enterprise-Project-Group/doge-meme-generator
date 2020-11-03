@@ -39,6 +39,12 @@ module.exports.create = (event, context, cb) => {
     
       console.log("Writing file: ", fileName)
 
+      /* Jocelyn Baduria Update dog's name */
+      var dog = {"name":"Sugar","age":11};
+      for (property in dog) 
+      {console.log(property,dog[property]);}
+      /* Jocelyn Baduria Update dog's name */
+
       for (var bird of event.queryStringParameters.text.split(" ")) {
         var fontSize = Math.floor(Math.random() * (maxFontSize - minFontSize) + minFontSize + 1),
             x = Math.floor(Math.random() * (maxWidth - (fontSize * bird.length))),
@@ -46,8 +52,22 @@ module.exports.create = (event, context, cb) => {
             color = colors[Math.floor(Math.random() * 4)]
 
         image = image.fontSize(fontSize).fill(color).drawText(x, y, bird)
-        console.log('drew text for: ' + bird)
+        console.log('drew text for: ' + bird)       
       }
+
+      for (var dogs of event.queryStringParameters.text.write(" ")) {
+        var fontSize = Math.floor(Math.random() * (maxFontSize - minFontSize) + minFontSize + 1),
+            x = Math.floor(Math.random() * (maxWidth - (fontSize * bird.length))),
+            y = Math.floor(Math.random() * (maxHeight - (fontSize * 2)) + fontSize),
+            color = colors[Math.floor(Math.random() * 4)]
+
+        image = image.fontSize(fontSize).fill(color).drawText(x, y, dogs)
+        console.log('drew text for: ' + dogs)       
+      } 
+      /* Jocelyn Baduria Update dog's name */
+
+      dogs= dogs.write(" Hello my " + dog[property])
+       /* Jocelyn Baduria Update dog's name */
 
       console.log("Writing file: ", fileName)
       image.write(fileName, (err) => {

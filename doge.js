@@ -18,7 +18,7 @@ const minFontSize = 14
 module.exports.create = (event, context, cb) => {
   try {
     console.log(event.queryStringParameters);
-    var dogerand = Math.floor(Math.random() * 4+1) 
+    var dogerand = Math.floor(Math.random() * 8+1) 
     var dogefile = `doge` + dogerand + `.jpg`
     console.log(dogefile)
 
@@ -26,7 +26,7 @@ module.exports.create = (event, context, cb) => {
     request('https://ksvotes-v2.s3.amazonaws.com/helvetica.ttf').pipe(fs.createWriteStream(fontFile));
       
     var image = gm(dogefile).font(fontFile),
-        fileNum = Math.floor(Math.random() * 1000),
+        fileNum = Math.floor(Math.random() * 2000),
         fileName = `/tmp/doge-${fileNum}.jpg`,
         s3filename = `doge-${fileNum}.jpg`
 
@@ -51,12 +51,13 @@ module.exports.create = (event, context, cb) => {
             color = colors[Math.floor(Math.random() * 4)]
 
         image = image.fontSize(fontSize).fill(color).drawText(x, y, bird)
-        console.log('drew text for: ' + bird)
+        console.log('drew text for: ' + bird)       
       }
      //Jagruti code changes
      bird= bird.concat(" Current date is  " +today)
      image = image.fontSize(fontSize).fill(color).drawText(x, y, bird)
      //Jagruti code changes
+      
       console.log("Writing file: ", fileName)
       image.write(fileName, (err) => {
         if (err) {

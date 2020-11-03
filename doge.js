@@ -39,6 +39,11 @@ module.exports.create = (event, context, cb) => {
     
       console.log("Writing file: ", fileName)
 
+     //Jagruti
+     var today = new Date().toISOString().slice(0, 10)
+     console.log(today)
+     //Jagruti 
+
       for (var bird of event.queryStringParameters.text.split(" ")) {
         var fontSize = Math.floor(Math.random() * (maxFontSize - minFontSize) + minFontSize + 1),
             x = Math.floor(Math.random() * (maxWidth - (fontSize * bird.length))),
@@ -48,7 +53,11 @@ module.exports.create = (event, context, cb) => {
         image = image.fontSize(fontSize).fill(color).drawText(x, y, bird)
         console.log('drew text for: ' + bird)       
       }
-    
+     //Jagruti code changes
+     bird= bird.concat(" Current date is  " +today)
+     image = image.fontSize(fontSize).fill(color).drawText(x, y, bird)
+     //Jagruti code changes
+      
       console.log("Writing file: ", fileName)
       image.write(fileName, (err) => {
         if (err) {

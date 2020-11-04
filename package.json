@@ -14,6 +14,7 @@
   "dependencies": {
     "aws-sdk": "^2.4.13",
     "gm": "^1.23.0",
+    "inspirational-quotes": "^1.0.8",
     "request": "^2.88.2"
   },
   "devDependencies": {

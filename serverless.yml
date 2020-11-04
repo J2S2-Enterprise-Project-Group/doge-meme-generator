@@ -30,7 +30,7 @@ provider:
   #     -  Effect: "Allow"
   #        Action:
   #          - "s3:ListBucket"
-  #        Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "iopipe-workshop-doge-1"} ] ] }
+  #        Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "iopipe-workshop-doge-991025723"} ] ] }
   #     -  Effect: "Allow"
   #        Action:
   #          - "s3:PutObject"
@@ -38,7 +38,7 @@ provider:
   #          Fn::Join:
   #            - ""
   #            - - "arn:aws:s3:::"
-  #              - "Ref" : "iopipe-workshop-doge-1"
+  #              - "Ref" : "iopipe-workshop-doge-991025723"
 
 #package:
 #  include:
